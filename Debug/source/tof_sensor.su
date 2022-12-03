@@ -1,0 +1,9 @@
+../source/tof_sensor.c:43:6:tof_data_init	16	static
+../source/tof_sensor.c:65:6:tof_static_init	8	static
+../source/tof_sensor.c:71:9:vl53l0x_read_range_single	32	static
+../source/tof_sensor.c:111:6:init_tofsensor	24	static
+../source/tof_sensor.c:140:6:test_tofsensor	8	static
+../source/tof_sensor.c:145:6:standby_tofsensor	8	static
+../source/tof_sensor.c:151:6:wakeup_tofsensor	8	static
+../source/tof_sensor.c:157:10:measure_distance	8	static
+../source/tof_sensor.c:162:6:test_i2c_lm75	32	static

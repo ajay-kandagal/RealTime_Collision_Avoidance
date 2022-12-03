@@ -1,0 +1,11 @@
+../source/i2c.c:38:6:i2c_init	8	static
+../source/i2c.c:59:6:i2c_set_slave_address	16	static
+../source/i2c.c:65:9:i2c_write_write	24	static
+../source/i2c.c:91:9:i2c_write_read	24	static
+../source/i2c.c:123:9:i2c_write_addr8_data8	16	static
+../source/i2c.c:128:9:i2c_write_addr8_data32	16	static
+../source/i2c.c:133:9:i2c_write_addr8_bytes	16	static
+../source/i2c.c:138:9:i2c_read_addr8_data8	16	static
+../source/i2c.c:143:9:i2c_read_addr8_data16	16	static
+../source/i2c.c:148:9:i2c_read_addr8_data32	16	static
+../source/i2c.c:153:9:i2c_read_addr8_bytes	16	static
