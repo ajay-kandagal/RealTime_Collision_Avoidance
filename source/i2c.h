@@ -1,6 +1,7 @@
 #include "MKL25Z4.h"
 
 void i2c_init();
+
 void i2c_set_slave_address(const uint8_t addr);
 
 uint8_t i2c_read_addr8_data8(uint8_t addr, uint8_t *data);

@@ -4,7 +4,6 @@
  * @link    https://github.com/artfulbytes/vl6180x_vl53l0x_msp430.git
  * 
  **/
-
 #include "vl53l0x.h"
 #include "i2c.h"
 #include "fsl_debug_console.h"
