@@ -70,8 +70,8 @@ int main(void) {
 
 	uint16_t range;
 	while(1) {
-		vl53l0x_read_range_single(VL53L0X_IDX_FIRST, &range);
-		PRINTF("\n\rRange: %u",range);
+		if (vl53l0x_read_range_single(VL53L0X_IDX_FIRST, &range))
+			PRINTF("\n\rRange: %u",range);
 	}
 	return 0 ;
 }

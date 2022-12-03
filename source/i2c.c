@@ -93,7 +93,7 @@ uint8_t i2c_write_write(uint8_t index, uint8_t *bytes, uint16_t byte_count)
 
 	I2C1_SEND_STOP;
 
-	Pause(50);
+	Pause(100);
 
 	return 1;
 }
@@ -124,10 +124,10 @@ uint8_t i2c_write_read(uint8_t index, uint8_t *bytes, uint16_t byte_count)
 		I2C1_WAIT;
 	}
 
-	Pause(50);
-
 	I2C1_DISABLE_ACK;
 	I2C1_SEND_STOP;
+
+	Pause(100);
 
 	return 1;
 }

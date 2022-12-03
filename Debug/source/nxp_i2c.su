@@ -1,4 +1,12 @@
-../source/nxp_i2c.c:4:6:Pause_MS	24	static
-../source/nxp_i2c.c:13:6:I2C_WriteRegister	24	static
-../source/nxp_i2c.c:30:15:I2C_ReadRegister	32	static
-../source/nxp_i2c.c:57:6:I2C_ReadMultiRegisters	32	static
+../source/nxp_i2c.c:7:6:nxp_i2c_set_slave_address	16	static
+../source/nxp_i2c.c:12:6:I2C_WriteRegister	24	static
+../source/nxp_i2c.c:30:6:I2C_WriteMultiRegister	32	static
+../source/nxp_i2c.c:49:15:I2C_ReadRegister	32	static
+../source/nxp_i2c.c:76:6:I2C_ReadMultiRegisters	32	static
+../source/nxp_i2c.c:115:9:nxp_i2c_write_addr8_data8	16	static
+../source/nxp_i2c.c:122:9:nxp_i2c_write_addr8_data32	16	static
+../source/nxp_i2c.c:129:9:nxp_i2c_write_addr8_bytes	24	static
+../source/nxp_i2c.c:136:9:nxp_i2c_read_addr8_data8	16	static
+../source/nxp_i2c.c:142:9:nxp_i2c_read_addr8_data16	16	static
+../source/nxp_i2c.c:148:9:nxp_i2c_read_addr8_data32	16	static
+../source/nxp_i2c.c:154:9:nxp_i2c_read_addr8_bytes	24	static
