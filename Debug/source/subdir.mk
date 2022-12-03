@@ -7,7 +7,6 @@ C_SRCS += \
 ../source/i2c.c \
 ../source/main.c \
 ../source/mtb.c \
-../source/nxp_i2c.c \
 ../source/semihost_hardfault.c \
 ../source/timer.c \
 ../source/vl53l0x.c 
@@ -16,7 +15,6 @@ C_DEPS += \
 ./source/i2c.d \
 ./source/main.d \
 ./source/mtb.d \
-./source/nxp_i2c.d \
 ./source/semihost_hardfault.d \
 ./source/timer.d \
 ./source/vl53l0x.d 
@@ -25,7 +23,6 @@ OBJS += \
 ./source/i2c.o \
 ./source/main.o \
 ./source/mtb.o \
-./source/nxp_i2c.o \
 ./source/semihost_hardfault.o \
 ./source/timer.o \
 ./source/vl53l0x.o 
@@ -43,7 +40,7 @@ source/%.o: ../source/%.c source/subdir.mk
 clean: clean-source
 
 clean-source:
-	-$(RM) ./source/i2c.d ./source/i2c.o ./source/main.d ./source/main.o ./source/mtb.d ./source/mtb.o ./source/nxp_i2c.d ./source/nxp_i2c.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/timer.d ./source/timer.o ./source/vl53l0x.d ./source/vl53l0x.o
+	-$(RM) ./source/i2c.d ./source/i2c.o ./source/main.d ./source/main.o ./source/mtb.d ./source/mtb.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/timer.d ./source/timer.o ./source/vl53l0x.d ./source/vl53l0x.o
 
 .PHONY: clean-source
 
