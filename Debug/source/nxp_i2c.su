@@ -1,0 +1,4 @@
+../source/nxp_i2c.c:4:6:Pause_MS	24	static
+../source/nxp_i2c.c:13:6:I2C_WriteRegister	24	static
+../source/nxp_i2c.c:30:15:I2C_ReadRegister	32	static
+../source/nxp_i2c.c:57:6:I2C_ReadMultiRegisters	32	static

@@ -34,6 +34,14 @@
 
 uint8_t g_device_addr = 0x00;
 
+void Pause(int number)
+{
+	int cnt;
+	for(cnt=0; cnt<number; cnt++)
+	{
+		asm("nop");
+	};
+}
 
 void i2c_init()
 {
@@ -85,6 +93,8 @@ uint8_t i2c_write_write(uint8_t index, uint8_t *bytes, uint16_t byte_count)
 
 	I2C1_SEND_STOP;
 
+	Pause(50);
+
 	return 1;
 }
 
@@ -113,6 +123,8 @@ uint8_t i2c_write_read(uint8_t index, uint8_t *bytes, uint16_t byte_count)
 		bytes[i] = I2C1->D;
 		I2C1_WAIT;
 	}
+
+	Pause(50);
 
 	I2C1_DISABLE_ACK;
 	I2C1_SEND_STOP;

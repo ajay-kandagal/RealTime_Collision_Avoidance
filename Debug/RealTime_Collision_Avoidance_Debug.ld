@@ -6,7 +6,7 @@
  * Generated linker script file for MKL25Z128xxx4
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.6.0 [Build 8187] [2022-07-13] on 02-Dec-2022, 3:45:14 AM
+ * MCUXpresso IDE v11.6.0 [Build 8187] [2022-07-13] on 03-Dec-2022, 12:22:29 AM
  */
 
 INCLUDE "RealTime_Collision_Avoidance_Debug_library.ld"
