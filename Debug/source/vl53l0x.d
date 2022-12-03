@@ -6,7 +6,6 @@ source/vl53l0x.o source/vl53l0x.d: ../source/vl53l0x.c \
  C:\Users\ajayk\Documents\MCUXpressoIDE_11.6.0_8187\workspace\RealTime_Collision_Avoidance\CMSIS/cmsis_gcc.h \
  C:\Users\ajayk\Documents\MCUXpressoIDE_11.6.0_8187\workspace\RealTime_Collision_Avoidance\CMSIS/core_cmFunc.h \
  C:\Users\ajayk\Documents\MCUXpressoIDE_11.6.0_8187\workspace\RealTime_Collision_Avoidance\CMSIS/system_MKL25Z4.h \
- ../source/nxp_i2c.h \
  C:\Users\ajayk\Documents\MCUXpressoIDE_11.6.0_8187\workspace\RealTime_Collision_Avoidance\utilities/fsl_debug_console.h \
  C:\Users\ajayk\Documents\MCUXpressoIDE_11.6.0_8187\workspace\RealTime_Collision_Avoidance\drivers/fsl_common.h \
  C:\Users\ajayk\Documents\MCUXpressoIDE_11.6.0_8187\workspace\RealTime_Collision_Avoidance\CMSIS/fsl_device_registers.h \
@@ -22,7 +21,6 @@ C:\Users\ajayk\Documents\MCUXpressoIDE_11.6.0_8187\workspace\RealTime_Collision_
 C:\Users\ajayk\Documents\MCUXpressoIDE_11.6.0_8187\workspace\RealTime_Collision_Avoidance\CMSIS/cmsis_gcc.h:
 C:\Users\ajayk\Documents\MCUXpressoIDE_11.6.0_8187\workspace\RealTime_Collision_Avoidance\CMSIS/core_cmFunc.h:
 C:\Users\ajayk\Documents\MCUXpressoIDE_11.6.0_8187\workspace\RealTime_Collision_Avoidance\CMSIS/system_MKL25Z4.h:
-../source/nxp_i2c.h:
 C:\Users\ajayk\Documents\MCUXpressoIDE_11.6.0_8187\workspace\RealTime_Collision_Avoidance\utilities/fsl_debug_console.h:
 C:\Users\ajayk\Documents\MCUXpressoIDE_11.6.0_8187\workspace\RealTime_Collision_Avoidance\drivers/fsl_common.h:
 C:\Users\ajayk\Documents\MCUXpressoIDE_11.6.0_8187\workspace\RealTime_Collision_Avoidance\CMSIS/fsl_device_registers.h:
