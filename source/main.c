@@ -44,6 +44,7 @@
 #include "timer.h"
 #include "i2c.h"
 #include "vl53l0x.h"
+#include "buzzer.h"
 
 /* TODO: insert other definitions and declarations here. */
 
@@ -64,7 +65,13 @@ int main(void) {
 	PRINTF("\n\rHello World");
 	init_systick();
 	i2c_init();
+	buzzer_init();
 
+	for (uint8_t i = 0; i < 255; i++) {
+		play_buzzer(i);
+		delay_ms(10);
+	}
+	stop_buzzer();
 	if (vl53l0x_init())
 		PRINTF("\n\rI2C initialized");
 

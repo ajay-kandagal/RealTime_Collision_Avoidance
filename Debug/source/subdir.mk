@@ -4,26 +4,32 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../source/buzzer.c \
 ../source/i2c.c \
 ../source/main.c \
 ../source/mtb.c \
 ../source/semihost_hardfault.c \
+../source/servo.c \
 ../source/timer.c \
 ../source/vl53l0x.c 
 
 C_DEPS += \
+./source/buzzer.d \
 ./source/i2c.d \
 ./source/main.d \
 ./source/mtb.d \
 ./source/semihost_hardfault.d \
+./source/servo.d \
 ./source/timer.d \
 ./source/vl53l0x.d 
 
 OBJS += \
+./source/buzzer.o \
 ./source/i2c.o \
 ./source/main.o \
 ./source/mtb.o \
 ./source/semihost_hardfault.o \
+./source/servo.o \
 ./source/timer.o \
 ./source/vl53l0x.o 
 
@@ -40,7 +46,7 @@ source/%.o: ../source/%.c source/subdir.mk
 clean: clean-source
 
 clean-source:
-	-$(RM) ./source/i2c.d ./source/i2c.o ./source/main.d ./source/main.o ./source/mtb.d ./source/mtb.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/timer.d ./source/timer.o ./source/vl53l0x.d ./source/vl53l0x.o
+	-$(RM) ./source/buzzer.d ./source/buzzer.o ./source/i2c.d ./source/i2c.o ./source/main.d ./source/main.o ./source/mtb.d ./source/mtb.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/servo.d ./source/servo.o ./source/timer.d ./source/timer.o ./source/vl53l0x.d ./source/vl53l0x.o
 
 .PHONY: clean-source
 
