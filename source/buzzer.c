@@ -17,11 +17,15 @@
 #define CPU_CLOCK_FREQ			(48000000)
 #define TPM_PRESCALER_BIN_VAL 	(7)
 #define TPM_PRESCALER_VAL		(128)
-#define MIN_BUZZER_FREQ			(200)
-#define MAX_BUZZER_FREQ			(1200)
 
-#define MIN_TPM_MOD_VAL			((CPU_CLOCK_FREQ / TPM_PRESCALER_VAL) / MIN_BUZZER_FREQ)
-#define MAX_TPM_MOD_VAL			((CPU_CLOCK_FREQ / TPM_PRESCALER_VAL) / MAX_BUZZER_FREQ)
+#define MIN_BUZZER_FREQ			(200)
+#define MAX_BUZZER_FREQ			(4000)
+#define BUZZER_FREQ_STEPS		(5)
+
+#define MIN_TPM_MOD_VAL			((CPU_CLOCK_FREQ / MAX_BUZZER_FREQ) / TPM_PRESCALER_VAL)
+#define MAX_TPM_MOD_VAL			((CPU_CLOCK_FREQ / MIN_BUZZER_FREQ) / TPM_PRESCALER_VAL)
+#define TPM_MOD_RANGE			(MAX_TPM_MOD_VAL - MIN_TPM_MOD_VAL)
+#define TPM_MOD_RESOLUTION		(TPM_MOD_RANGE / BUZZER_FREQ_STEPS)
 
 void buzzer_init()
 {
@@ -44,12 +48,15 @@ void buzzer_init()
 
 void stop_buzzer()
 {
-	TPM0->SC &= ~TPM_SC_CMOD(1);
+	if (TPM0->SC & TPM_SC_CMOD(1))
+		TPM0->SC &= ~TPM_SC_CMOD(1);
 }
 
-void play_buzzer(uint8_t freq_map)
+void play_buzzer(uint16_t target_val, uint16_t max_val)
 {
-	TPM0->MOD = MIN_TPM_MOD_VAL + ((freq_map * (MAX_TPM_MOD_VAL - MIN_TPM_MOD_VAL)) / 255);
+	uint16_t tmp_mod_val = (TPM_MOD_RANGE / max_val) * target_val;
+	tmp_mod_val = (tmp_mod_val / TPM_MOD_RESOLUTION) * TPM_MOD_RESOLUTION;
+	TPM0->MOD = MIN_TPM_MOD_VAL + tmp_mod_val;
 	TPM0->CONTROLS[TPM_CHANNEL].CnV = TPM0->MOD / 2;			// 50% duty cycle
 	TPM0->SC |= TPM_SC_CMOD(1);
 }

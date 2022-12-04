@@ -46,6 +46,8 @@
 #include "vl53l0x.h"
 #include "buzzer.h"
 
+#define OBJECT_WARNING_PROXIMITY 300
+
 /* TODO: insert other definitions and declarations here. */
 
 /*
@@ -68,17 +70,34 @@ int main(void) {
 	buzzer_init();
 
 	for (uint8_t i = 0; i < 255; i++) {
-		play_buzzer(i);
+		play_buzzer(i, 255);
 		delay_ms(10);
 	}
+
 	stop_buzzer();
+
 	if (vl53l0x_init())
 		PRINTF("\n\rI2C initialized");
 
 	uint16_t range;
 	while(1) {
-		if (vl53l0x_read_range_single(VL53L0X_IDX_FIRST, &range))
-			PRINTF("\n\rRange: %u",range);
+		if (vl53l0x_read_range_single(VL53L0X_IDX_FIRST, &range)) {
+			if (range != VL53L0X_OUT_OF_RANGE) {
+				PRINTF("\n\rRange: %u",range);
+				if (range < OBJECT_WARNING_PROXIMITY) {
+					play_buzzer(range, OBJECT_WARNING_PROXIMITY);
+				}
+				else {
+					stop_buzzer();
+				}
+			}
+			else {
+				stop_buzzer();
+			}
+		}
+		else {
+			stop_buzzer();
+		}
 	}
 	return 0 ;
 }
